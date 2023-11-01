@@ -27,9 +27,11 @@ config = function()
 	mason_lspconfig.setup({
 		-- list of servers for mason to install
 		ensure_installed = {
-			"lua_ls",
-			"pyright",
-			"rust_analyzer",
+			"codelldb",
+			"clangd", -- c, c++
+			"lua_ls", -- lua
+			"pyright", -- python
+			"rust_analyzer", -- rust
 		},
 		-- auto-install configured servers (with lspconfig)
 		automatic_installation = true, -- not the same as ensure_installed
@@ -37,8 +39,10 @@ config = function()
 
 	mason_tool_installer.setup({
 		ensure_installed = {
+			"clang-format", -- c, c#, c++, json, java, javascript
 			"stylua", -- lua formatter
 			"black", -- python formatter
+			"rustfmt", -- rust
 		},
 	})
 end,

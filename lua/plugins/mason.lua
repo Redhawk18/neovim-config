@@ -42,7 +42,6 @@ config = function()
 			"clang-format", -- c, c#, c++, json, java, javascript
 			"stylua", -- lua formatter
 			"black", -- python formatter
-			"rustfmt", -- rust
 		},
 	})
 end,

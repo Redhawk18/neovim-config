@@ -6,10 +6,7 @@ return {
 		{ "antosha417/nvim-lsp-file-operations", config = true },
 	},
 	config = function()
-		-- import lspconfig plugin
 		local lspconfig = require("lspconfig")
-
-		-- import cmp-nvim-lsp plugin
 		local cmp_nvim_lsp = require("cmp_nvim_lsp")
 
 		local keymap = vim.keymap -- for conciseness
@@ -70,47 +67,54 @@ return {
 			vim.fn.sign_define(hl, { text = icon, texthl = hl, numhl = "" })
 		end
 
-		-- -- configure html server
-		-- lspconfig["html"].setup({
-		-- capabilities = capabilities,
-		-- on_attach = on_attach,
-		-- })
+		-- c, c++
+		lspconfig["clangd"].setup({
+			on_attach = on_attach,
+			capabilities = capabilities,
+		})
 
-		-- -- configure typescript server with plugin
-		-- lspconfig["tsserver"].setup({
-		-- capabilities = capabilities,
-		-- on_attach = on_attach,
-		-- })
-
-		-- -- configure css server
-		-- lspconfig["cssls"].setup({
-		-- capabilities = capabilities,
-		-- on_attach = on_attach,
-		-- })
-
-		-- -- configure emmet language server
-		-- lspconfig["emmet_ls"].setup({
-		-- 	capabilities = capabilities,
-		-- 	on_attach = on_attach,
-		-- 	filetypes = { "html", "typescriptreact", "javascriptreact", "css", "sass", "scss", "less", "svelte" },
-		-- })
+		-- javascript, typescript
+		lspconfig["typescript-language-server"].setup({	
+			on_attach = on_attach,
+			capabilities = capabilities,
+			init_options = {
+				preferences = {
+					disableSuggestions = true,
+				},
+			},
+		})
 
 		-- python
 		lspconfig["pyright"].setup({
-			capabilities = capabilities,
 			on_attach = on_attach,
+			capabilities = capabilities,	
+			init_options = {
+				preferences = {
+					disableSuggestions = true, 
+				},
+			},
 		})
 
-		-- python
+		-- rust
 		lspconfig["rust_analyzer"].setup({
-			capabilities = capabilities,
 			on_attach = on_attach,
+			capabilities = capabilities,
+			init_options = {
+				preferences = {
+					disableSuggestions = true, 
+				},
+			},
 		})
 
 		-- configure lua server (with special settings)
-		lspconfig["lua_ls"].setup({
+		lspconfig["lua-language-server"].setup({
 		capabilities = capabilities,
 		on_attach = on_attach,
+		init_options = {
+			preferences = {
+				disableSuggestions = true,
+			}
+		},
 		settings = { -- custom settings for lua
 			Lua = {
 			-- make the language server recognize "vim" global

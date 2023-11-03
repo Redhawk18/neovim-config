@@ -1,49 +1,66 @@
 return {
-"williamboman/mason.nvim",
-dependencies = {
-	"williamboman/mason-lspconfig.nvim",
-	"WhoIsSethDaniel/mason-tool-installer.nvim",
-},
-config = function()
-	-- import mason
-	local mason = require("mason")
-
-	-- import mason-lspconfig
-	local mason_lspconfig = require("mason-lspconfig")
-
-	local mason_tool_installer = require("mason-tool-installer")
-
-	-- enable mason and configure icons
-	mason.setup({
-		ui = {
-			icons = {
-			package_installed = "✓",
-			package_pending = "➜",
-			package_uninstalled = "✗",
+	"williamboman/mason.nvim",
+	dependencies = {
+		"WhoIsSethDaniel/mason-tool-installer.nvim",
+	},
+	config = function()
+		local mason = require("mason")
+		local mason_tool_installer = require("mason-tool-installer")
+		mason.setup({
+			ui = {
+				icons = {
+				package_installed = "✓",
+				package_pending = "➜",
+				package_uninstalled = "✗",
+				},
 			},
-		},
-	})
+		})
 
-	mason_lspconfig.setup({
-		-- list of servers for mason to install
-		ensure_installed = {
-			"codelldb",
-			"clangd", -- c, c++
-			"lua_ls", -- lua
-			"pyright", -- python
-			"rust_analyzer", -- rust
-		},
-		-- auto-install configured servers (with lspconfig)
-		automatic_installation = true, -- not the same as ensure_installed
-	})
-
-	mason_tool_installer.setup({
-		ensure_installed = {
-			"clang-format", -- c, c#, c++, json, java, javascript
-			"stylua", -- lua formatter
-			"black", -- python formatter
-		},
-	})
-end,
+		mason_tool_installer.setup({
+			ensure_installed = {
+				-- bash
+				"bash-language-server",
+				"bash-debug-adapter",
+				"beautysh",
+				-- c, c++
+				"clangd",
+				"cpplint",
+				"clang-format",
+				-- css
+				"css-lsp",
+				-- docker
+				"dockerfile-language-server",
+				"docker-compose-language-service",
+				-- html
+				"html-lsp",
+				-- javascript, typescript
+				"typescript-language-server",
+				"ts-standard",
+				-- lua
+				"lua-language-server",
+				"luacheck",
+				"luaformatter",
+				-- nix
+				"nil",
+				-- python
+				"pyright",
+				"mypy",
+				"pydocstyle",
+				"black",
+				-- ruby
+				"ruby-lsp",
+				"erb-lint",
+				"rubyfmt",
+				-- rust
+				"rust-analyzer",
+				"codelldb",
+				-- sql
+				"sqlls",
+				"sqlfluff",
+				"sqlfmt",
+			},
+			auto_update = true,
+		})
+	end,
 }
 

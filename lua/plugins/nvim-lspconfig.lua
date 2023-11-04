@@ -74,7 +74,7 @@ return {
 		})
 
 		-- javascript, typescript
-		lspconfig["typescript-language-server"].setup({	
+		lspconfig["tsserver"].setup({
 			on_attach = on_attach,
 			capabilities = capabilities,
 			init_options = {
@@ -84,13 +84,40 @@ return {
 			},
 		})
 
+		-- lua
+		lspconfig["lua_ls"].setup({
+			capabilities = capabilities,
+			on_attach = on_attach,
+			init_options = {
+				preferences = {
+					disableSuggestions = true,
+				},
+			},
+			settings = { -- custom settings for lua
+    				Lua = {
+					-- make the language server recognize "vim" global
+					diagnostics = {
+						globals = { "vim" },
+					},
+					workspace = {
+						-- make language server aware of runtime files
+						library = {
+							[vim.fn.expand("$VIMRUNTIME/lua")] = true,
+							[vim.fn.stdpath("config") .. "/lua"] = true,
+						},
+					},
+				},
+			},
+
+		})
+
 		-- python
 		lspconfig["pyright"].setup({
 			on_attach = on_attach,
-			capabilities = capabilities,	
+			capabilities = capabilities,
 			init_options = {
 				preferences = {
-					disableSuggestions = true, 
+					disableSuggestions = true,
 				},
 			},
 		})
@@ -101,35 +128,9 @@ return {
 			capabilities = capabilities,
 			init_options = {
 				preferences = {
-					disableSuggestions = true, 
+					disableSuggestions = true,
 				},
 			},
-		})
-
-		-- configure lua server (with special settings)
-		lspconfig["lua-language-server"].setup({
-		capabilities = capabilities,
-		on_attach = on_attach,
-		init_options = {
-			preferences = {
-				disableSuggestions = true,
-			}
-		},
-		settings = { -- custom settings for lua
-			Lua = {
-			-- make the language server recognize "vim" global
-			diagnostics = {
-				globals = { "vim" },
-			},
-			workspace = {
-				-- make language server aware of runtime files
-				library = {
-				[vim.fn.expand("$VIMRUNTIME/lua")] = true,
-				[vim.fn.stdpath("config") .. "/lua"] = true,
-				},
-			},
-			},
-		},
 		})
 	end,
 }

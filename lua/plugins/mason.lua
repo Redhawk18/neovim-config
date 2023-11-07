@@ -21,11 +21,9 @@ return {
 				-- bash
 				"bash-language-server",
 				"bash-debug-adapter",
-				"beautysh",
+				"shfmt",
 				-- c, c++
 				"clangd",
-				"cpplint",
-				"clang-format",
 				-- css
 				"css-lsp",
 				-- docker
@@ -35,29 +33,21 @@ return {
 				"html-lsp",
 				-- javascript, typescript
 				"typescript-language-server",
-				"ts-standard",
 				-- lua
 				"lua-language-server",
-				"luacheck",
-				"luaformatter",
 				-- nix
 				"nil",
 				-- python
 				"pyright",
-				"mypy",
 				"pydocstyle",
 				"black",
 				-- ruby
 				"ruby-lsp",
-				"erb-lint",
-				"rubyfmt",
 				-- rust
 				"rust-analyzer",
 				"codelldb",
 				-- sql
 				"sqlls",
-				"sqlfluff",
-				"sqlfmt",
 			},
 			auto_update = true,
 		})

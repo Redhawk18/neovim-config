@@ -10,6 +10,7 @@ lua (with rocks and dev)
 npm
 nix
 python (with pip)
+ripgrep
 ruby (with gems and dev)
 rustup (stable toolchain)
 ```

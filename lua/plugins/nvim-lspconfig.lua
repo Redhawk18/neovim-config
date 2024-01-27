@@ -59,8 +59,6 @@ return {
         -- used to enable autocompletion (assign to every lsp server config)
         local capabilities = cmp_nvim_lsp.default_capabilities()
 
-        -- Change the Diagnostic symbols in the sign column (gutter)
-        -- (not in youtube nvim video)
         local signs = { Error = " ", Warn = " ", Hint = "󰠠 ", Info = " " }
         for type, icon in pairs(signs) do
             local hl = "DiagnosticSign" .. type
@@ -69,7 +67,7 @@ return {
 
         local nproc = string.gsub(vim.fn.system('nproc'), "\n", "")
 
-        -- c, c++
+        -- c, c++, objc
         lspconfig["clangd"].setup({
             on_attach = on_attach,
             capabilities = capabilities,
@@ -80,6 +78,16 @@ return {
                 "--background-index",
             },
             filetypes = { "c", "cpp", "objc", "objcpp" },
+        })
+
+        lspconfig["cssls"].setup({
+            on_attach = on_attach,
+            capabilities = capabilities,
+        })
+
+        lspconfig["html"].setup({
+            on_attach = on_attach,
+            capabilities = capabilities,
         })
 
         -- javascript, typescript
@@ -131,10 +139,18 @@ return {
             },
         })
 
-        -- rust
         lspconfig["rust_analyzer"].setup({
             on_attach = on_attach,
             capabilities = capabilities,
+            procMacro = {
+                ignored = {
+                    leptos_macro = {
+                        -- optional: --
+                        -- "component",
+                        "server",
+                    },
+                },
+            },
             init_options = {
                 preferences = {
                     disableSuggestions = true,

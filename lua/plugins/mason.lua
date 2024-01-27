@@ -25,7 +25,7 @@ return {
                 -- c, c++
                 "clangd",
                 -- css
-                -- "css-lsp",
+                "css-lsp",
                 -- docker
                 -- "dockerfile-language-server",
                 -- "docker-compose-language-service",

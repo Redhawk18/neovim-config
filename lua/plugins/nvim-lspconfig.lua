@@ -67,7 +67,7 @@ return {
 
         local nproc = string.gsub(vim.fn.system('nproc'), "\n", "")
 
-        lspconfig["bash-language-server"].setup({})
+        lspconfig["bashls"].setup({})
 
         -- c, c++, objc
         lspconfig["clangd"].setup({
@@ -87,7 +87,7 @@ return {
             capabilities = capabilities,
         })
 
-        lspconfig["dockerfile-language-server-nodejs"].setup({})
+        lspconfig["dockerls"].setup({})
 
         lspconfig["docker_compose_language_service"].setup({})
 

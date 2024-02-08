@@ -27,12 +27,12 @@ return {
                 -- css
                 "css-lsp",
                 -- docker
-                -- "dockerfile-language-server",
-                -- "docker-compose-language-service",
+                "dockerfile-language-server",
+                "docker-compose-language-service",
                 -- html
                 "html-lsp",
                 -- javascript, typescript
-                -- "typescript-language-server",
+                "typescript-language-server",
                 -- lua
                 "lua-language-server",
                 -- nix
@@ -41,13 +41,11 @@ return {
                 "pyright",
                 "pydocstyle",
                 "black",
-                -- ruby
-                -- "ruby-lsp",
                 -- rust
                 "rust-analyzer",
                 "codelldb",
                 -- sql
-                -- "sqlls",
+                "sqlls",
             },
             auto_update = true,
         })

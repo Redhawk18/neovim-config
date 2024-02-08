@@ -67,6 +67,8 @@ return {
 
         local nproc = string.gsub(vim.fn.system('nproc'), "\n", "")
 
+        lspconfig["bash-language-server"].setup({})
+
         -- c, c++, objc
         lspconfig["clangd"].setup({
             on_attach = on_attach,
@@ -85,21 +87,17 @@ return {
             capabilities = capabilities,
         })
 
+        lspconfig["dockerfile-language-server-nodejs"].setup({})
+
+        lspconfig["docker_compose_language_service"].setup({})
+
         lspconfig["html"].setup({
             on_attach = on_attach,
             capabilities = capabilities,
         })
 
         -- javascript, typescript
-        lspconfig["tsserver"].setup({
-            on_attach = on_attach,
-            capabilities = capabilities,
-            init_options = {
-                preferences = {
-                    disableSuggestions = true,
-                },
-            },
-        })
+        lspconfig["tsserver"].setup({})
 
         -- lua
         lspconfig["lua_ls"].setup({
@@ -157,5 +155,7 @@ return {
                 },
             },
         })
+
+        lspconfig["sqlls"].setup({})
     end,
 }

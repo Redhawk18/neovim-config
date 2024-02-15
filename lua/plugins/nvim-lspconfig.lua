@@ -87,9 +87,15 @@ return {
             capabilities = capabilities,
         })
 
-        lspconfig["dockerls"].setup({})
+        lspconfig["dockerls"].setup({
+            on_attach = on_attach,
+            capabilities = capabilities,
+        })
 
-        lspconfig["docker_compose_language_service"].setup({})
+        lspconfig["docker_compose_language_service"].setup({
+            on_attach = on_attach,
+            capabilities = capabilities,
+        })
 
         lspconfig["html"].setup({
             on_attach = on_attach,
@@ -97,7 +103,10 @@ return {
         })
 
         -- javascript, typescript
-        lspconfig["tsserver"].setup({})
+        lspconfig["tsserver"].setup({
+            on_attach = on_attach,
+            capabilities = capabilities,
+        })
 
         -- lua
         lspconfig["lua_ls"].setup({
@@ -126,7 +135,10 @@ return {
 
         })
 
-        lspconfig["nil_ls"].setup({})
+        lspconfig["nil_ls"].setup({
+            on_attach = on_attach,
+            capabilities = capabilities,
+        })
 
         -- python
         lspconfig["pyright"].setup({
@@ -158,6 +170,9 @@ return {
             },
         })
 
-        lspconfig["sqlls"].setup({})
+        lspconfig["sqlls"].setup({
+            on_attach = on_attach,
+            capabilities = capabilities,
+        })
     end,
 }

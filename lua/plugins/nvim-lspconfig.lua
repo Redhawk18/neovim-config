@@ -126,6 +126,8 @@ return {
 
         })
 
+        lspconfig["nil_ls"].setup({})
+
         -- python
         lspconfig["pyright"].setup({
             on_attach = on_attach,

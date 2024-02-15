@@ -20,6 +20,7 @@ return {
                 html = formatters.lsp,
                 javascript = formatters.lsp,
                 lua = formatters.lsp,
+                nix = formatters.lsp,
                 python = formatters.black,
                 rust = formatters.lsp,
                 sh = formatters.shfmt,

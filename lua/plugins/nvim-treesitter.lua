@@ -14,6 +14,7 @@ return {
                 "dockerfile",
                 "html",
                 "javascript",
+                "nix",
                 "python",
                 "rust",
                 "typescript",

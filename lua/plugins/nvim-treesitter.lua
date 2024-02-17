@@ -18,6 +18,7 @@ return {
                 "python",
                 "rust",
                 "typescript",
+                "svelte",
                 "sql",
             },
             sync_install = false,

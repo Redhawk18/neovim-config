@@ -33,6 +33,7 @@ return {
                 "html-lsp",
                 -- javascript, typescript
                 "typescript-language-server",
+                "svelte-language-server",
                 -- lua
                 "lua-language-server",
                 -- nix

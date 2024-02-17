@@ -135,6 +135,7 @@ return {
 
         })
 
+        -- nix
         lspconfig["nil_ls"].setup({
             on_attach = on_attach,
             capabilities = capabilities,
@@ -168,6 +169,11 @@ return {
                     disableSuggestions = true,
                 },
             },
+        })
+
+        lspconfig["svelte"].setup({
+            on_attach = on_attach,
+            capabilities = capabilities,
         })
 
         lspconfig["sqlls"].setup({

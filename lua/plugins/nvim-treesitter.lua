@@ -13,6 +13,7 @@ return {
                 "css",
                 "dockerfile",
                 "html",
+                "java",
                 "javascript",
                 "nix",
                 "python",

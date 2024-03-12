@@ -1,6 +1,8 @@
 return {
     "NvChad/nvim-colorizer.lua",
-    config = function()
-        require("colorizer").setup({})
-    end,
+    opts = {
+        user_default_options = {
+            AARRGGBB = true, -- 0xAARRGGBB hex codes
+        }
+    },
 }

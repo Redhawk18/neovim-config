@@ -31,6 +31,10 @@ return {
                 "docker-compose-language-service",
                 -- html
                 "html-lsp",
+                -- java
+                "jdtls",
+                "java-debug-adapter",
+                "java-test",
                 -- javascript, typescript
                 "typescript-language-server",
                 "svelte-language-server",

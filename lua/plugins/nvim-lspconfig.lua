@@ -102,6 +102,14 @@ return {
             capabilities = capabilities,
         })
 
+        -- java
+        lspconfig["jdtls"].setup({
+            on_attach = on_attach,
+            capabilities = capabilities,
+            cmd = { 'jdtls' }
+        })
+
+
         -- javascript, typescript
         lspconfig["tsserver"].setup({
             on_attach = on_attach,

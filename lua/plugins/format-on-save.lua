@@ -27,6 +27,7 @@ return {
                 svelte = formatters.lsp,
                 sql = formatters.lsp,
                 typescript = formatters.prettierd,
+  
             },
         })
     end,

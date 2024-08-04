@@ -47,7 +47,7 @@ return {
                 "pydocstyle",
                 "black",
                 -- rust
-                "rust-analyzer",
+                -- "rust-analyzer",
                 "codelldb",
                 -- sql
                 "sqlls",

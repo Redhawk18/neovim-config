@@ -21,9 +21,9 @@ return {
                 -- bash
                 "bash-language-server",
                 "bash-debug-adapter",
-                "shfmt",
+                -- "shfmt",
                 -- c, c++
-                "clangd",
+                -- "clangd",
                 -- css
                 "css-lsp",
                 -- docker
@@ -48,7 +48,7 @@ return {
                 "black",
                 -- rust
                 -- "rust-analyzer",
-                "codelldb",
+                -- "codelldb",
                 -- sql
                 "sqlls",
             },

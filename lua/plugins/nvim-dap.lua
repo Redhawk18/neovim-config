@@ -1,6 +1,7 @@
 return {
     "mfussenegger/nvim-dap",
     dependencies = { "rcarriga/nvim-dap-ui" },
+    event = "VeryLazy",
     config = function()
         local dap, dapui = require("dap"), require("dapui")
 
@@ -14,6 +15,7 @@ return {
             dapui.open()
         end
 
-        vim.keymap.set("n", "<Leader>db", ":DapToggleBreakpoint<CR>")
+        vim.keymap.set("n", "<Leader>db", "<cmd>DapToggleBreakpoint <CR>")
+        vim.keymap.set("n", "<Leader>dr", "<cmd> DapContinue <CR>")
     end,
 }

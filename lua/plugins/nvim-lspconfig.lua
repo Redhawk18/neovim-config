@@ -79,7 +79,7 @@ return {
                 "-j", nproc,
                 "--background-index",
             },
-            filetypes = { "c", "cpp", "objc", "objcpp" },
+            filetypes = { "c", "cpp", },
         })
 
         lspconfig["cssls"].setup({
@@ -146,12 +146,12 @@ return {
         lspconfig["nixd"].setup({
             on_attach = on_attach,
             capabilities = capabilities,
-             formating = {
+            formating = {
                 command = { "nixpkgs-fmt" },
-            },           
+            },
         })
 
-       -- nix
+        -- nix
         -- lspconfig["nil_ls"].setup({
         --     on_attach = on_attach,
         --     capabilities = capabilities,

@@ -15,6 +15,7 @@ return {
                 "html",
                 "java",
                 "javascript",
+                "lua",
                 "nix",
                 "python",
                 "rust",

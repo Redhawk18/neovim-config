@@ -152,16 +152,6 @@ return {
             },
         })
 
-        -- nix
-        -- lspconfig["nil_ls"].setup({
-        --     on_attach = on_attach,
-        --     capabilities = capabilities,
-        --     formating = {
-        --         command = { "nixpkgs-fmt" },
-        --     },
-        -- })
-
-        -- python
         lspconfig["pyright"].setup({
             on_attach = on_attach,
             capabilities = capabilities,

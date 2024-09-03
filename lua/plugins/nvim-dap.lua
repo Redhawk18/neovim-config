@@ -15,7 +15,7 @@ return {
             dapui.open()
         end
 
-        vim.keymap.set("n", "<Leader>db", "<cmd>DapToggleBreakpoint <CR>")
-        vim.keymap.set("n", "<Leader>dr", "<cmd>DapContinue <CR>")
+        -- vim.keymap.set("n", "<Leader>db", "<cmd>DapToggleBreakpoint <CR>")
+        -- vim.keymap.set("n", "<Leader>dr", "<cmd>DapContinue <CR>")
     end,
 }

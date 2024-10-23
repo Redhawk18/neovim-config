@@ -148,7 +148,10 @@ return {
             on_attach = on_attach,
             capabilities = capabilities,
             formating = {
-                command = { "nixpkgs-fmt" },
+                command = { "nixfmt" },
+            },
+            nixpkgs = {
+                expr = "import <nixpkgs> { }",
             },
         })
 

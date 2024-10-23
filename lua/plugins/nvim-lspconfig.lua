@@ -111,7 +111,7 @@ return {
 
 
         -- javascript, typescript
-        lspconfig["tsserver"].setup({
+        lspconfig["ts_ls"].setup({
             on_attach = on_attach,
             capabilities = capabilities,
         })
@@ -144,13 +144,29 @@ return {
 
         })
 
-        lspconfig["nixd"].setup({
-            on_attach = on_attach,
-            capabilities = capabilities,
-            formating = {
-                command = { "nixpkgs-fmt" },
-            },
-        })
+        -- lspconfig["nixd"].setup({
+        --     on_attach = on_attach,
+        --     capabilities = capabilities,
+        --     settings = {
+        --         formating = {
+        --             command = { "nixfmt" },
+        --         },
+        --         nixpkgs = {
+        --             expr = "import <nixpkgs> { }",
+        --         },
+        --     },
+        -- })
+
+local nvim_lsp = require("lspconfig")
+nvim_lsp.nixd.setup({
+   settings = {
+      nixd = {
+         formatting = {
+            command = { "nixfmt" },
+         },
+      },
+   },
+})
 
         lspconfig["pyright"].setup({
             on_attach = on_attach,

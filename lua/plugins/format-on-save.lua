@@ -17,8 +17,8 @@ return {
                 cpp = formatters.lsp,
                 css = formatters.lsp,
                 dockerfile = formatters.lsp,
+                javascript = formatters.lsp,
                 html = formatters.lsp,
-                javascript = formatters.prettierd,
                 lua = formatters.lsp,
                 nix = formatters.lsp,
                 python = formatters.black,
@@ -26,9 +26,10 @@ return {
                 sh = formatters.shfmt,
                 svelte = formatters.lsp,
                 sql = formatters.lsp,
-                typescript = formatters.prettierd,
-  
+                typescript = formatters.lsp,
+            
             },
+
         })
     end,
 

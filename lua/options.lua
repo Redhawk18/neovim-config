@@ -8,5 +8,4 @@ vim.o.softtabstop = 4
 vim.opt.autoindent = true
 vim.opt.relativenumber = true
 vim.opt.number = true
-vim.opt.tabstop = 4
-vim.opt.shiftwidth = 4
+vim.o.undofile = true

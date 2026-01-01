@@ -3,6 +3,6 @@ return {
     opts = {
         user_default_options = {
             AARRGGBB = true, -- 0xAARRGGBB hex codes
-        }
+        },
     },
 }

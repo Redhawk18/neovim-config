@@ -13,15 +13,15 @@ return {
 				lualine_c = {
 					{
 						"filename",
-						path = 1
+						path = 1,
 					},
 				},
 
 				lualine_x = {
 					{
-					lazy_status.updates,
-					cond = lazy_status.has_updates,
-					}
+						lazy_status.updates,
+						cond = lazy_status.has_updates,
+					},
 				},
 			},
 		})

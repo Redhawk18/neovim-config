@@ -6,8 +6,7 @@ return {
 		-- kanagawa
 		--vim.cmd("colorscheme kanagawa-wave")
 
-		-- gruvbox 
+		-- gruvbox
 		vim.cmd("colorscheme gruvbox")
-	end
+	end,
 }
-

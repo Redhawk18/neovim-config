@@ -1,4 +1,4 @@
 return {
-    "alec-gibson/nvim-tetris",
-    cmd = "Tetris",
+	"alec-gibson/nvim-tetris",
+	cmd = "Tetris",
 }

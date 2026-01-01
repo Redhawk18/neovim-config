@@ -1,31 +1,31 @@
 return {
-    "nvim-treesitter/nvim-treesitter",
-    build = ":TSUpdate",
-    config = function()
-        local config = require("nvim-treesitter.configs")
+	"nvim-treesitter/nvim-treesitter",
+	build = ":TSUpdate",
+	config = function()
+		local config = require("nvim-treesitter.configs")
 
-        config.setup({
-            ensure_installed = {
-                "bash",
-                "c",
-                "cmake",
-                "cpp",
-                "css",
-                "dockerfile",
-                "html",
-                "java",
-                "javascript",
-                "lua",
-                "nix",
-                "python",
-                "rust",
-                "typescript",
-                "svelte",
-                "sql",
-            },
-            sync_install = false,
-            highlight = { enable = true },
-            indent = { enable = true },
-        })
-    end,
+		config.setup({
+			ensure_installed = {
+				"bash",
+				"c",
+				"cmake",
+				"cpp",
+				"css",
+				"dockerfile",
+				"html",
+				"java",
+				"javascript",
+				"lua",
+				"nix",
+				"python",
+				"rust",
+				"typescript",
+				"svelte",
+				"sql",
+			},
+			sync_install = false,
+			highlight = { enable = true },
+			indent = { enable = true },
+		})
+	end,
 }

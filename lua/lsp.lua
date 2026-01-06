@@ -1,6 +1,8 @@
 vim.lsp.config('*', {
     root_markers = { '.git' },
 })
+vim.lsp.inlay_hint.enable()
+
 
 vim.lsp.enable({
     'clangd',

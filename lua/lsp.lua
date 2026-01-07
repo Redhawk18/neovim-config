@@ -3,7 +3,6 @@ vim.lsp.config('*', {
 })
 vim.lsp.inlay_hint.enable()
 
-
 vim.lsp.enable({
     'clangd',
     'cmake',
@@ -11,7 +10,7 @@ vim.lsp.enable({
     'docker',
     'json',
     'just',
-    'lua',
+    -- 'lua',
     'nixd',
     'pyright',
     'rust-analyzer',

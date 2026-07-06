@@ -5,6 +5,8 @@ return {
 	config = function()
 		local dap, dapui = require("dap"), require("dapui")
 
+		dapui.setup()
+
 		dap.listeners.after.event_initialized["dapui_config"] = function()
 			dapui.open()
 		end
@@ -17,6 +19,28 @@ return {
 
 
         -- https://codeberg.org/mfussenegger/nvim-dap/wiki/Debug-Adapter-installation
+		dap.adapters.codelldb = {
+			type = "server",
+			port = "${port}",
+			executable = {
+				command = "codelldb",
+				args = { "--port", "${port}" },
+			},
+		}
+
+		dap.configurations.rust = {
+			{
+				name = "Launch",
+				type = "codelldb",
+				request = "launch",
+				program = function()
+					return vim.fn.input("Path to executable: ", vim.fn.getcwd() .. "/target/debug/", "file")
+				end,
+				cwd = "${workspaceFolder}",
+				stopOnEntry = false,
+			},
+		}
+
 		vim.keymap.set("n", "<F9>", "<cmd>DapToggleBreakpoint <CR>")
 		vim.keymap.set("n", "<F5>", "<cmd>DapContinue <CR>")
 	end,

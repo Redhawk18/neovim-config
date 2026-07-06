@@ -28,6 +28,19 @@ return {
 			},
 		}
 
+		local native_config = {
+			{
+				name = "Launch",
+				type = "codelldb",
+				request = "launch",
+				program = function()
+					return vim.fn.input("Path to executable: ", vim.fn.getcwd() .. "/", "file")
+				end,
+				cwd = "${workspaceFolder}",
+				stopOnEntry = false,
+			},
+		}
+
 		dap.configurations.rust = {
 			{
 				name = "Launch",
@@ -40,6 +53,13 @@ return {
 				stopOnEntry = false,
 			},
 		}
+
+		dap.configurations.c = native_config
+		dap.configurations.cpp = native_config
+		dap.configurations.zig = native_config
+		dap.configurations.d = native_config
+		dap.configurations.nim = native_config
+		dap.configurations.fortran = native_config
 
 		vim.keymap.set("n", "<F9>", "<cmd>DapToggleBreakpoint <CR>")
 		vim.keymap.set("n", "<F5>", "<cmd>DapContinue <CR>")

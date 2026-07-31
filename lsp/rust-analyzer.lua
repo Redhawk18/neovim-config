@@ -12,6 +12,10 @@ return {
                 command = "check",
                 workspace = false,
             },
+            files = {
+                watcher = "client",
+                excludeDirs = { ".devenv", ".direnv", "target" },
+            },
         },
     },
 }

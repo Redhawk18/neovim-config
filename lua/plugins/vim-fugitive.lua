@@ -3,7 +3,7 @@ return {
     config = function()
         vim.keymap.set("n", "<leader>gs", vim.cmd.Git)
         vim.keymap.set("n", "<leader>ga", function()
-            vim.cmd.Git("add " .. vim.fn.input("> "))
+            vim.cmd.Git("add " .. vim.fn.input({ prompt = "> ", completion = "file" }))
         end)
         vim.keymap.set("n", "<leader>gaa", function()
             vim.cmd.Git("add *")

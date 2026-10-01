@@ -1,5 +1,6 @@
 return {
     "nvim-treesitter/nvim-treesitter",
+    branch = "master", -- "main" is a rewrite that requires Neovim 0.12+
     build = ":TSUpdate",
     opts = {
         ensure_installed = {
@@ -13,12 +14,17 @@ return {
             "java",
             "javascript",
             "lua",
+            "markdown",
+            "markdown_inline",
             "nix",
             "python",
             "rust",
             "typescript",
             "svelte",
             "sql",
+            "query",
+            "vim",
+            "vimdoc",
         },
         highlight = {
             enable = true,
